@@ -15,14 +15,14 @@ public class CustomerController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
 
     @Autowired
-    private CustomerService customerService;
+    private ICustomerService customerService;
 
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
 
-    @GetMapping("/getServices")
+    @GetMapping("/customer/getServices")
     public String getServices() {
         String services = customerService.getServices();
         return services;
