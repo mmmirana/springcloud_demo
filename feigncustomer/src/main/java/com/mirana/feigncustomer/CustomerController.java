@@ -1,4 +1,4 @@
-package com.mirana.ribboncustomer;
+package com.mirana.feigncustomer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,16 +7,16 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 
 @RestController
-public class ConsumerController {
+public class CustomerController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
 
     @Autowired
-    private RestTemplate restTemplate;
+    private CustomerService customerService;
+
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
@@ -24,10 +24,9 @@ public class ConsumerController {
 
     @GetMapping("/getServices")
     public String getServices() {
-        String services = restTemplate.getForObject("http://eurekaclient/getServices", String.class);
+        String services = customerService.getServices();
         return services;
     }
-
 
     @GetMapping("/log-instance")
     public String logUserInstance() {

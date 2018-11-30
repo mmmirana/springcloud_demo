@@ -9,8 +9,12 @@ server:
 eureka:
   instance:
     hostname: localhost # ip
+  server:
+    enableSelfPreservation: false   # 关闭自我保护模式（缺省为打开）
+    evictionIntervalTimerInMs: 5000 # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+
   client:
-    registerWithEureka: false # 表示是否将自己注册到Eureka Server,默认为true
-    fetchRegistry: false # 表示是否从Eureka Server获取注册信息,默认为true
+    registerWithEureka: false       # 表示是否将自己注册到Eureka Server,默认为true
+    fetchRegistry: false            # 表示是否从Eureka Server获取注册信息,默认为true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 服务注册中心的地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # 服务注册中心的地址

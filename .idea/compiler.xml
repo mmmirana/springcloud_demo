@@ -9,12 +9,14 @@
         <module name="boot" />
         <module name="eurekaclient" />
         <module name="eurekaserver" />
+        <module name="feigncustomer" />
         <module name="ribboncustomer" />
         <module name="springcloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eurekaclient2" target="1.8" />
+      <module name="hystrix" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -23,6 +25,8 @@
       <module name="eurekaclient" options="-parameters" />
       <module name="eurekaclient2" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="feigncustomer" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
       <module name="ribboncustomer" options="-parameters" />
     </option>
   </component>
