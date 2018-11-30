@@ -24,19 +24,23 @@ public class CustomerController {
 
     @GetMapping("/customer/getServices")
     public String getServices() {
+        LOGGER.info("routing - feigncustomer...");
         String services = customerService.getServices();
-        return services;
+        return "feigncustomer: " + services;
     }
 
     @GetMapping("/log-instance")
     public String logUserInstance() {
         // 服务提供商实例信息
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("eurekaclient");
+        if (serviceInstance != null) {
+            String serviceInfo = String.format("%s:%s:%s", serviceInstance.getServiceId(), serviceInstance.getHost(), serviceInstance.getPort());
+            // 打印当前选择的是哪个节点
+            LOGGER.info(serviceInfo);
+            return serviceInfo;
+        } else {
+            return "serviceInstance is null";
+        }
 
-        String serviceInfo = String.format("%s:%s:%s", serviceInstance.getServiceId(), serviceInstance.getHost(), serviceInstance.getPort());
-        // 打印当前选择的是哪个节点
-        LOGGER.info(serviceInfo);
-
-        return serviceInfo;
     }
 }

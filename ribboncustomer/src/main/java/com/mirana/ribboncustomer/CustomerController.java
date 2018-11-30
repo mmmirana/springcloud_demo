@@ -23,10 +23,11 @@ public class CustomerController {
 
     // 当服务提供商停止某服务，但是服务注册中心尚未移除已停止的服务时，启用服务降级策略。超时/出现异常也会qiyo9ng服务降级策略。
     @HystrixCommand(fallbackMethod = "getServicesErr")
-    @GetMapping("/getServices")
+    @GetMapping("/customer/getServices")
     public String getServices() {
+        LOGGER.info("routing - ribboncustomer...");
         String services = restTemplate.getForObject("http://eurekaclient/getServices", String.class);
-        return services;
+        return "ribboncustomer: " + services;
     }
 
     public String getServicesErr() {

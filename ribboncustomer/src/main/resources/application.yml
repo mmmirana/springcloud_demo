@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ribboncustomer
+    name: ribbon
 
 server:
   port: 9010

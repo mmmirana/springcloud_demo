@@ -1,6 +1,6 @@
 spring:
   application:
-    name: feigncustomer
+    name: feign
 
 server:
   port: 9011
