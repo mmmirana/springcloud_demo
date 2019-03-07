@@ -1,16 +1,16 @@
 spring:
   application:
-    name: eurekaserver # app名称
+    name: eurekaserver              # app名称
 
 server:
-  port: 8761 # app端口
+  port: 8761                        # app端口
 
 # eureka配置
 eureka:
   instance:
-    hostname: localhost # ip
+    hostname: localhost             # ip
   server:
-    enableSelfPreservation: false   # 关闭自我保护模式（缺省为打开）
+    enableSelfPreservation: true    # 关闭自我保护模式（缺省为打开）
     evictionIntervalTimerInMs: 5000 # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
 
   client:

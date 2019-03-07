@@ -5,6 +5,9 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RestController
 public class HelloController {
 
@@ -19,7 +22,11 @@ public class HelloController {
     @GetMapping("/getServices")
     public String getServices() {
         String services = "Services: " + discoveryClient.getServices();
-        System.out.println(services);
+        System.out.println(getSimpleDateStr() + services);
         return services;
+    }
+
+    private String getSimpleDateStr() {
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 }

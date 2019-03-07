@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configclient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configserver" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurekaclient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurekaclient/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurekaserver" charset="UTF-8" />
@@ -9,7 +11,7 @@
     <file url="file://$PROJECT_DIR$/ribboncustomer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ribboncustomer/src/main/resources/application.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zuul" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuulroute" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuulroute/src/main/resources/application.yml" charset="UTF-8" />
   </component>
 </project>

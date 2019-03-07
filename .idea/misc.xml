@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/ribboncustomer/pom.xml" />
         <option value="$PROJECT_DIR$/feigncustomer/pom.xml" />
         <option value="$PROJECT_DIR$/zuulroute/pom.xml" />
+        <option value="$PROJECT_DIR$/configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/configclient/pom.xml" />
       </list>
     </option>
   </component>

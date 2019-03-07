@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-// 测试过程中返现，使用 @EnableEurekaClient 和 @EnableDiscoveryClient 其中一个就可以，之前只能使用@EnableEurekaClient
+// 测试过程中发现，使用 @EnableEurekaClient 和 @EnableDiscoveryClient 其中一个就可以，之前只能使用@EnableEurekaClient
 //@EnableEurekaClient
 @EnableDiscoveryClient
 @SpringBootApplication

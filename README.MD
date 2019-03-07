@@ -76,7 +76,7 @@ eureka:
     # 拉取服务器注册信息间隔时间（缺省为30s）
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
 
@@ -104,7 +104,7 @@ eureka:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 
 # 熔断超时时间，设置为5s
@@ -136,7 +136,33 @@ eureka:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+      
+feign:
+  httpclient:
+    enabled: true
+```
+6.zuulroute
+--------------------------------------
+zuulroute-9020
+
+application.yml:
+
+```yml
+spring:
+  application:
+    name: feigncustomer
+
+server:
+  port: 9011
+
+# eureka 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
       
 feign:
   httpclient:

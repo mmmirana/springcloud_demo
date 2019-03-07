@@ -5,15 +5,15 @@ spring:
 server:
   port: 9020
 
-# eureka 注册中心配置
+# eureka 娉ㄥ唽涓績閰嶇疆
 eureka:
   instance:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
-# 路由转发配置
+# 璺敱杞彂閰嶇疆
 zuul:
   routes:
     api-a:

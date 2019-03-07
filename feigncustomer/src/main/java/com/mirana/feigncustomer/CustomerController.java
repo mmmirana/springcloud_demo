@@ -41,6 +41,5 @@ public class CustomerController {
         } else {
             return "serviceInstance is null";
         }
-
     }
 }
