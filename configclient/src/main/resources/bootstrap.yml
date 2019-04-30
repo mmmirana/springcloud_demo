@@ -13,8 +13,13 @@ spring:
         service-id: configserver    # 表示注册中心config-server的服务名
       fail-fast: true               # 启用快速失败
 
-#      username: admin               # 安全中心配置用户名和密码，测试不起作用！！！
-#      password: 123456
+
+  # 20190430 SpringCloudBus需要使用rabbitmq， 新增rabbitmq的配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 9031
@@ -27,3 +32,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+# 20190430 使用springcloudbus更新配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
