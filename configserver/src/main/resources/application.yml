@@ -1,0 +1,23 @@
+server:
+  port: 9030
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mmmirana/SpringcloudConfig.git
+          searchPaths: config_repo_dev                              # 读取git目录
+          # 私有仓库需要配置用户名和密码
+#          username: username_***
+#          password: password_***
+
+# eureka 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      label: master                 # 指明label
+      name: mysqlyml                # 指明application
+      profile: dev                  # 指明profile
+      uri: http://localhost:9030/   # Springcloud-ConfigServer地址
+
+      discovery:
+        enabled: true               # 表示开启通过服务名来访问config-server
+        service-id: configserver    # 表示注册中心config-server的服务名
+      fail-fast: true               # 启用快速失败
+
+#      username: admin               # 安全中心配置用户名和密码，测试不起作用！！！
+#      password: 123456
+
+server:
+  port: 9031
+
+
+# eureka 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
