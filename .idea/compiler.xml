@@ -14,12 +14,17 @@
         <module name="feigncustomer" />
         <module name="ribboncustomer" />
         <module name="springcloud" />
+        <module name="stream" />
+        <module name="stream_customer" />
         <module name="zuulroute" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eurekaclient2" target="1.8" />
       <module name="hystrix" target="1.8" />
+      <module name="stream-hello" target="1.8" />
+      <module name="stream_input" target="1.8" />
+      <module name="stream_output" target="1.8" />
       <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -34,6 +39,11 @@
       <module name="feigncustomer" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="ribboncustomer" options="-parameters" />
+      <module name="stream" options="-parameters" />
+      <module name="stream-hello" options="-parameters" />
+      <module name="stream_customer" options="-parameters" />
+      <module name="stream_input" options="-parameters" />
+      <module name="stream_output" options="-parameters" />
       <module name="zuul" options="-parameters" />
       <module name="zuulroute" options="-parameters" />
     </option>

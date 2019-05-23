@@ -1,0 +1,37 @@
+server:
+  port: 9041
+
+spring:
+  application:
+    name: stream-rabbitmq
+  cloud:
+    stream:
+      binders:
+        local_rabbit:
+          type: rabbit
+      defaultBinder: local_rabbit #设置默认绑定器
+      bindings:
+        stream_input:
+          destination: queue_stream # input 和 output 的destination 保持一致才能保证输入输出同时监听一个队列
+          binder: local_rabbit
+          consumer:
+            max-attempts: 10 # 重试次数
+            initial-interval: 1000 # 重试时间间隔
+        stream_output:
+          destination: queue_stream
+          binder: local_rabbit
+#      rabbit:
+#        bindings:
+#          stream_input:
+#            consumer:
+#              #              ttl: 3000 #消息3秒不消费转入死信队列
+#              auto-bind-dlq: true #启动死信队列
+#              autoBindDlq: true #启动死信队列
+#  #              dead-letter-exchage: stream_dlq #绑定exchange
+#  #              deadLetterQueueName: queue_stream_dlq #死信队列名字：exchanName.queueName
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
