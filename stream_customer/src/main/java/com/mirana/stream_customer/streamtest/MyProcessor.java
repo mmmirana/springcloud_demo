@@ -7,17 +7,7 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface MyProcessor {
 
-    String STREAM_OUTPUT = "stream_output";
     String STREAM_INPUT = "stream_input";
-    String STREAM_DLQ = "stream_dlq";
-
-    /**
-     * 生产者通道
-     *
-     * @return
-     */
-    @Output(STREAM_OUTPUT)
-    MessageChannel output();
 
     /**
      * 消费者通道

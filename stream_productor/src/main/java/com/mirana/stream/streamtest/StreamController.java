@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -17,9 +16,10 @@ public class StreamController {
     private MqMessageProducer producer;
 
     /**
-     * 发送消息，type==100 正常消费，非100，抛出异常
-     * @param message
-     * @param type
+     * 模拟生产者发送消息
+     *
+     * @param message 消息
+     * @param type    type==100 正常消费，非100，抛出异常
      * @return
      */
     @GetMapping("/send")
@@ -29,6 +29,7 @@ public class StreamController {
         MessageHeaders headers = new MessageHeaders(headerMap);
 
         producer.sendMsg(MessageBuilder.createMessage(message, headers));
+
         return "成功发送一条信息：" + message;
     }
 }

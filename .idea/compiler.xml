@@ -14,8 +14,8 @@
         <module name="feigncustomer" />
         <module name="ribboncustomer" />
         <module name="springcloud" />
-        <module name="stream" />
         <module name="stream_customer" />
+        <module name="stream_productor" />
         <module name="zuulroute" />
       </profile>
     </annotationProcessing>
@@ -39,11 +39,11 @@
       <module name="feigncustomer" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="ribboncustomer" options="-parameters" />
-      <module name="stream" options="-parameters" />
       <module name="stream-hello" options="-parameters" />
       <module name="stream_customer" options="-parameters" />
       <module name="stream_input" options="-parameters" />
       <module name="stream_output" options="-parameters" />
+      <module name="stream_productor" options="-parameters" />
       <module name="zuul" options="-parameters" />
       <module name="zuulroute" options="-parameters" />
     </option>
