@@ -25,6 +25,7 @@
       <module name="stream-hello" target="1.8" />
       <module name="stream_input" target="1.8" />
       <module name="stream_output" target="1.8" />
+      <module name="stream_productor" target="1.8" />
       <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
