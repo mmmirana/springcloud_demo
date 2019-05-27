@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class StreamApplication {
+public class StreamProductorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StreamApplication.class, args);
+        SpringApplication.run(StreamProductorApplication.class, args);
     }
 
 }
