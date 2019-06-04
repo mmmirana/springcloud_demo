@@ -4,5 +4,5 @@ server:
     context-path: /springboot
 
 person:
-  name: wangzhifei
+  name: mmmirna
   age: 12

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.UUID;
+
 // @RestController 返回的是json数据，想要返回视图，则必须定义为@controller
 @Controller
 public class HelloController {
@@ -27,6 +29,7 @@ public class HelloController {
     @RequestMapping("/hello")
     @ResponseBody
     public String sayHello() {
+        System.out.println(UUID.randomUUID().toString());
         return "Hello SpringBoot";
     }
 
