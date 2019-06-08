@@ -1,4 +1,4 @@
-package com.mirana.boot;
+package com.mirana.boot.yuyue;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
